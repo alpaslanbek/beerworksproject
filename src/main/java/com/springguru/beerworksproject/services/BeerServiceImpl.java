@@ -11,4 +11,11 @@ public class BeerServiceImpl implements BeerService {
     public BeerDTO getBeerById(UUID beerId) {
         return BeerDTO.builder().beerName("Tuborg").beerStyle("Pilsner").id(UUID.randomUUID()).upc(1L).build();
     }
+
+    @Override
+    public BeerDTO createNewBeer(BeerDTO beerDTO) {
+        return BeerDTO.builder()
+                .id(UUID.randomUUID())
+                .build();
+    }
 }
